@@ -213,10 +213,6 @@ const config = {
                 label: '博客',
                 to: '/blog',
               },
-              {
-                label: '关于',
-                to: '/about',
-              },
             ],
           },
         ],
