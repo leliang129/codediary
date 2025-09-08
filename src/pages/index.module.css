@@ -1,0 +1,144 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ifm-background-color);
+}
+
+.hero__title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #2e8555; /* 使用更深的绿色，与白色背景形成更好对比 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #333333; /* 使用深灰色，确保在白色背景上的可读性 */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+/* Stats Section */
+.stats {
+  padding: 3rem 0;
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.statItem {
+  text-align: center;
+  padding: 1rem;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--ifm-color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Technology Cards */
+.technologies {
+  padding: 4rem 0;
+}
+
+.card {
+  height: 100%;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card__header {
+  padding: 1.5rem 1.5rem 0;
+}
+
+.card__header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--ifm-color-primary);
+}
+
+.card__body {
+  padding: 1rem 1.5rem;
+}
+
+.card__body p {
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 1rem;
+}
+
+.card__body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card__body li {
+  padding: 0.25rem 0;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.card__footer {
+  padding: 1rem 1.5rem 1.5rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 996px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+  
+  .hero__subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .statNumber {
+    font-size: 2rem;
+  }
+  
+  .card {
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .heroBanner {
+    padding: 2rem 0;
+  }
+  
+  .hero__title {
+    font-size: 1.8rem;
+  }
+  
+  .stats {
+    padding: 2rem 0;
+  }
+  
+  .statItem {
+    margin-bottom: 2rem;
+  }
+}
