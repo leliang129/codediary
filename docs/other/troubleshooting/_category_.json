@@ -1,0 +1,8 @@
+{
+  "label": "故障记录",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "description": "系统运维中的故障排查记录"
+  }
+}

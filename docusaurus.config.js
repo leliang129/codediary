@@ -106,11 +106,11 @@ const config = {
             label: '云原生',
             position: 'left',
             items: [
-              {
-                type: 'docSidebar',
-                sidebarId: 'cloudNativeSidebar',
-                label: '云原生概览',
-              },
+              // {
+              //   type: 'docSidebar',
+              //   sidebarId: 'cloudNativeSidebar',
+              //   label: '云原生概览',
+              // },
               {
                 type: 'docSidebar',
                 sidebarId: 'kubernetesSidebar',
@@ -128,11 +128,11 @@ const config = {
             label: '脚本语言',
             position: 'left',
             items: [
-              {
-                type: 'docSidebar',
-                sidebarId: 'scriptingIntroSidebar',
-                label: '脚本语言概览',
-              },
+              // {
+              //   type: 'docSidebar',
+              //   sidebarId: 'scriptingIntroSidebar',
+              //   label: '脚本语言概览',
+              // },
               {
                 type: 'docSidebar',
                 sidebarId: 'pythonSidebar',

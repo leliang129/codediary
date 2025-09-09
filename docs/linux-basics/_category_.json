@@ -1,0 +1,8 @@
+{
+  "label": "Linux基础",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Linux系统基础操作和概念"
+  }
+}

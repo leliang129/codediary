@@ -2,46 +2,109 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# CodeDiary 技术文档入门指南
 
-Let's discover **Docusaurus in less than 5 minutes**.
+欢迎来到 CodeDiary 技术文档中心！这里汇集了丰富的技术学习资源，涵盖 Linux 系统、云原生技术、脚本编程、软件工具等多个技术领域。
 
-## Getting Started
+## 🎯 本站内容概览
 
-Get started by **creating a new site**.
+CodeDiary 致力于为开发者和技术爱好者提供系统化的学习路径和实用的技术文档：
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+### 📚 主要技术板块
 
-### What you'll need
+- **Linux 基础知识** - 从入门到精通的 Linux 系统学习指南
+- **云原生技术** - Kubernetes、Prometheus 等云原生工具详解  
+- **脚本语言** - Bash、Python、Shell 脚本编程实战
+- **软件工具** - 开发、运维、办公等各类软件使用指南
+- **故障排查** - 系统、网络、应用层面的问题解决方案
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## 🚀 快速开始
 
-## Generate a new site
+### 浏览文档结构
 
-Generate a new Docusaurus site using the **classic template**.
+本站采用分层目录结构，方便您按主题系统学习：
 
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
+```text
+docs/
+├── intro/           # 入门指南 (当前位置)
+├── linux-basics/    # Linux 基础知识
+├── cloud-native/    # 云原生技术  
+├── scripting-languages/ # 脚本语言
+├── software/        # 软件工具
+└── troubleshooting/ # 故障排查
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+### 推荐学习路径
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+根据您的技术背景，我们推荐以下学习顺序：
 
-## Start your site
+1. **初学者**：Linux 基础 → 脚本语言 → 软件工具
+2. **运维工程师**：Linux 基础 → 云原生 → 故障排查
+3. **开发者**：脚本语言 → 软件工具(开发) → Linux 基础
 
-Run the development server:
+## 🔍 如何使用本站
+
+### 侧边栏导航
+
+本站提供多个侧边栏分类，您可以根据技术主题快速定位内容：
+
+- `tutorialSidebar` - 默认入门指南
+- `linuxIntroSidebar` - Linux 概览  
+- `linuxCommandsSidebar` - Linux 命令详解
+- `cloudNativeSidebar` - 云原生技术
+- 以及其他专业技术侧边栏
+
+### 搜索功能
+
+使用顶部的搜索框可以快速查找特定技术主题或命令用法。
+
+### 代码示例
+
+所有技术文档都包含实用的代码示例，您可以直接复制使用或根据需求修改。
+
+## 💡 学习建议
+
+### 实践为主
+技术学习最重要的是动手实践：
+- 尝试运行文档中的代码示例
+- 在自己的环境中复现操作步骤
+- 遇到问题时参考故障排查章节
+
+### 循序渐进
+建议按照文档的层次结构系统学习，打好基础后再进阶到复杂主题。
+
+### 社区交流
+欢迎在文档页面底部留言讨论，分享您的学习心得和遇到的问题。
+
+## 🛠 技术栈信息
+
+本站基于 [Docusaurus](https://docusaurus.io/) 构建，这是一个现代化的静态网站生成器，专为技术文档设计。
+
+### 本地开发
+如果您想参与文档贡献：
 
 ```bash
-cd my-website
-npm run start
+# 安装依赖
+yarn install
+
+# 启动开发服务器
+yarn start
+
+# 构建静态网站
+yarn build
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+## 📖 下一步行动
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+现在您可以：
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+1. **浏览 Linux 基础知识** - 如果您是Linux新手
+2. **学习云原生技术** - 如果您对容器化和Kubernetes感兴趣  
+3. **掌握脚本编程** - 如果您想提升自动化技能
+4. **查阅软件工具** - 如果您需要特定软件的使用指南
+
+---
+
+💬 **反馈与建议**：如果您发现文档中有任何问题或有改进建议，欢迎通过页面底部的评论功能告诉我们！
+
+🎉 **祝您学习愉快！**
