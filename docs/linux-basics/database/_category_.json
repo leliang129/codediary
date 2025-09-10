@@ -1,0 +1,8 @@
+{
+  "label": "数据库管理",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Linux环境下数据库管理，包括MySQL、Redis、Elasticsearch、MongoDB等"
+  }
+}

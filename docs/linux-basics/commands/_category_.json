@@ -1,8 +1,8 @@
 {
   "label": "Linux命令详解",
-  "position": 1,
+  "position": 3,
   "link": {
     "type": "generated-index",
-    "description": "Linux系统中常用的命令详解"
+    "description": "详细介绍Linux系统中的各种常用命令和高级命令"
   }
 }

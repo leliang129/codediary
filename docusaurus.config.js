@@ -86,19 +86,24 @@ const config = {
           },
           {
             type: 'dropdown',
-            label: 'Linux基础',
+            label: 'Linux基础教程',
             position: 'left',
             items: [
               {
                 type: 'docSidebar',
                 sidebarId: 'linuxIntroSidebar',
-                label: 'Linux概览',
+                label: ' Linux基础教程',
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'linuxCommandsSidebar',
-                label: 'Linux命令',
+                sidebarId: 'linuxSystemSidebar',
+                label: ' Linux系统管理',
               },
+              {
+                type: 'docSidebar',
+                sidebarId: 'linuxdatabaseSidebar',
+                label: ' 数据库管理',
+              }
             ],
           },
           {
@@ -152,13 +157,13 @@ const config = {
             items: [
               {
                 type: 'docSidebar',
-                sidebarId: 'troubleshootingSidebar',
-                label: '故障记录',
+                sidebarId: 'softwareSidebar',
+                label: '运维工具',
               },
               {
                 type: 'docSidebar',
-                sidebarId: 'softwareSidebar',
-                label: '运维工具',
+                sidebarId: 'troubleshootingSidebar',
+                label: '故障记录',
               },
             ],
           },

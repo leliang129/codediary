@@ -1,0 +1,8 @@
+{
+  "label": "系统管理",
+  "position": 9,
+  "link": {
+    "type": "generated-index",
+    "description": "Linux系统管理高级主题，包括监控、日志管理和备份恢复"
+  }
+}
