@@ -167,11 +167,11 @@ const config = {
               },
             ],
           },
-          {
-            to: 'https://github.com/leliang129/codediary',
-            label: 'GitHub',
-            position: 'right',
-          },
+          // {
+          //   to: 'https://github.com/leliang129/codediary',
+          //   label: 'GitHub',
+          //   position: 'right',
+          // },
           {
             to: '/resources',
             label: '资源导航',
