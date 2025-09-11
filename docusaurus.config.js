@@ -15,15 +15,15 @@ const config = {
   favicon: 'img/favicon.svg',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://codediary.dev',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'leliang129', // Usually your GitHub org/user name.
+  projectName: 'codediary', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -168,8 +168,13 @@ const config = {
             ],
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            to: 'https://github.com/leliang129/codediary',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            to: '/resources',
+            label: '资源导航',
             position: 'right',
           },
         ],
@@ -198,16 +203,35 @@ const config = {
             title: '社区',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/',
-              },
-              {
                 label: 'GitHub',
-                href: 'https://github.com/',
+                to: 'https://github.com/',
               },
               {
-                label: '技术论坛',
-                href: 'https://example.com',
+                label: 'Docker',
+                to: 'https://docs.docker.com/',
+              },
+              {
+                label: 'GitLab',
+                to: 'https://gitlab.com/',
+              },
+
+              
+            ],
+          },
+          {
+            title: '云原生指南',
+            items: [
+              {
+                label: 'Kubernetes',
+                to: 'https://kubernetes.io/',
+              },
+              {
+                label: 'Prometheus',
+                to: 'https://prometheus.io/',
+              },
+              {
+                label: 'ArgoCD',
+                to: 'https://argoproj.github.io/',
               },
             ],
           },
