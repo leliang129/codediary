@@ -103,7 +103,12 @@ const config = {
                 type: 'docSidebar',
                 sidebarId: 'linuxdatabaseSidebar',
                 label: ' 数据库管理',
-              }
+              },
+              {
+                type: 'docSidebar',
+                sidebarId: 'terraformSidebar',
+                label: ' Terraform自动化',
+              },
             ],
           },
           {

@@ -1,0 +1,9 @@
+{
+  "label": "Terraform",
+  "position": 5,
+  "link": {
+    "type": "generated-index",
+    "title": "Terraform 自动化基础",
+    "description": "基础与进阶 Terraform 实践，涵盖安装、状态管理、模块化与团队协作"
+  }
+}

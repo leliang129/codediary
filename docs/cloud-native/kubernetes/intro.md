@@ -1,6 +1,7 @@
 ---
 title: Kubernetes核心概念
 slug: /cloud-native/kubernetes/intro
+sidebar_position: 1
 ---
 
 # Kubernetes核心概念
