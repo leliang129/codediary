@@ -1,307 +1,199 @@
-/* ResourceNavigation.module.css */
-
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+.dashboard {
+  position: relative;
+  min-height: calc(100vh - var(--ifm-navbar-height, 0px));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem 4rem;
+  overflow: hidden;
 }
 
-.header {
-  text-align: center;
-  margin-bottom: 3rem;
+.gradientBackground {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(135deg, rgba(12, 19, 70, 0.35), rgba(58, 34, 119, 0.25)),
+    url('/img/navimg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
-.header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.dashboardContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  color: #ffffff;
+}
+
+.heroArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.branding {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.clockBox {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.time {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
   font-weight: 700;
 }
 
-.header p {
-  font-size: 1.1rem;
-  color: var(--ifm-color-content-secondary);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-.featuredSection {
-  margin-bottom: 3rem;
-}
-
-.featuredSection h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: var(--ifm-heading-color);
-}
-
-.featuredGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.filterSection {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
-  background: var(--ifm-background-surface-color);
-  border-radius: 12px;
-  border: 1px solid var(--ifm-color-emphasis-200);
-}
-
-.searchBox {
-  width: 100%;
-}
-
-.searchInput {
-  width: 100%;
-  padding: 0.75rem 1rem;
+.date {
   font-size: 1rem;
-  border: 2px solid var(--ifm-color-emphasis-300);
-  border-radius: 8px;
-  background: var(--ifm-background-color);
-  color: var(--ifm-font-color-base);
-  transition: border-color 0.2s ease;
+  opacity: 0.8;
 }
 
-.searchInput:focus {
-  outline: none;
-  border-color: var(--ifm-color-primary);
-}
-
-.categoryFilter {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.categoryButton {
-  padding: 0.5rem 1rem;
-  border: 2px solid var(--ifm-color-emphasis-300);
-  border-radius: 20px;
-  background: var(--ifm-background-color);
-  color: var(--ifm-font-color-base);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.categoryButton:hover {
-  border-color: var(--ifm-color-primary);
-  background: var(--ifm-color-primary-lightest);
-}
-
-.categoryButton.active {
-  background: var(--ifm-color-primary);
-  border-color: var(--ifm-color-primary);
-  color: white;
-}
-
-.resourcesSection {
-  margin-bottom: 2rem;
-}
-
-.resultsInfo {
-  margin-bottom: 1rem;
-  color: var(--ifm-color-content-secondary);
-  font-size: 0.9rem;
-}
-
-.resourceGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.resourceCard {
-  background: var(--ifm-background-surface-color);
-  border: 1px solid var(--ifm-color-emphasis-200);
-  border-radius: 12px;
-  padding: 1.5rem;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
+.tilesArea {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  gap: 2.5rem;
 }
 
-.resourceCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  border-color: var(--ifm-color-primary-light);
-}
-
-.cardHeader {
+.tilesRow {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.rowHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
-.cardImage {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  flex-shrink: 0;
-  border-radius: 6px;
-}
-
-.cardTitle {
-  flex-grow: 1;
-  position: relative;
-}
-
-.cardTitle h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.1rem;
-  line-height: 1.3;
-}
-
-.cardTitle h3 a {
-  text-decoration: none;
-  color: var(--ifm-heading-color);
-  font-weight: 600;
-}
-
-.cardTitle h3 a:hover {
-  color: var(--ifm-color-primary);
-}
-
-.featuredBadge {
-  display: inline-block;
-  background: linear-gradient(135deg, #ff6b6b, #ffa500);
-  color: white;
-  font-size: 0.7rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 12px;
-  font-weight: 600;
+.rowTitle {
+  margin: 0;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.78);
 }
 
-.cardDescription {
-  color: var(--ifm-color-content-secondary);
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-  flex-grow: 1;
+.rowCount {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-left: auto;
 }
 
-.cardTags {
+.tilesRowList {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  gap: 1rem 1.5rem;
+  align-items: stretch;
+  justify-content: flex-start;
 }
 
-.tag {
-  background: var(--ifm-color-emphasis-100);
-  color: var(--ifm-color-emphasis-700);
-  font-size: 0.75rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: 12px;
-  font-weight: 500;
+.tile {
+  --tile-color: #4c8dff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 0 0 260px;
+  width: 260px;
+  max-width: 260px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+  border-radius: 20px;
+  padding: 1.1rem 1.6rem 1.1rem 1.9rem;
+  text-decoration: none !important;
+  color: #ffffff !important;
+  box-shadow: inset 6px 0 0 0 var(--tile-color), 0 22px 40px rgba(12, 10, 36, 0.35);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  min-height: 92px;
+  height: 118px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
 }
 
-.cardFooter {
-  margin-top: auto;
+.tile:hover {
+  transform: translateY(-4px);
+  box-shadow: inset 6px 0 0 0 var(--tile-color), 0 28px 48px rgba(12, 10, 36, 0.45);
 }
 
-.visitButton {
-  display: inline-flex;
+.tileInner {
+  display: flex;
   align-items: center;
-  padding: 0.6rem 1.2rem;
-  background: var(--ifm-color-primary);
-  color: white !important;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
+  gap: 0.85rem;
 }
 
-.visitButton:hover {
-  background: var(--ifm-color-primary-dark);
-  transform: translateX(2px);
-  text-decoration: none;
-  color: white !important;
+.tileIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.22);
+  padding: 6px;
+  object-fit: contain;
+  backdrop-filter: blur(4px);
+  position: relative;
+  z-index: 1;
 }
 
-.noResults {
-  text-align: center;
-  padding: 3rem 1rem;
-  color: var(--ifm-color-content-secondary);
-}
-
-.noResults p {
+.tileName {
   font-size: 1.1rem;
-  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
-/* 响应式设计 */
-@media (max-width: 1200px) {
-  .featuredGrid,
-  .resourceGrid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 992px) {
-  .featuredGrid,
-  .resourceGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.tileSubtitle {
+  font-size: 0.85rem;
+  opacity: 0.78;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
-  .container {
-    padding: 1rem;
+  .dashboard {
+    padding: 2.5rem 1.25rem;
   }
-  
-  .header h1 {
-    font-size: 2rem;
+
+  .clockBox {
+    text-align: left;
   }
-  
-  .featuredGrid,
-  .resourceGrid {
-    grid-template-columns: 1fr;
-  }
-  
-  .filterSection {
-    padding: 1rem;
-  }
-  
-  .categoryFilter {
-    justify-content: center;
-  }
-  
-  .resourceCard {
-    padding: 1rem;
-  }
-  
-  .cardImage {
-    width: 32px;
-    height: 32px;
+
+  .tile {
+    flex: 1 1 100%;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 92px;
   }
 }
 
-@media (max-width: 480px) {
-  .header h1 {
-    font-size: 1.8rem;
-  }
-  
-  .categoryButton {
-    font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
+@media (prefers-reduced-motion: reduce) {
+  .tile,
+  .tile:hover {
+    transform: none;
+    transition: none;
   }
 }

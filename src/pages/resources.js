@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -278,153 +278,97 @@ const resourcesData = [
   },
 ];
 
-// 获取所有分类
-const categories = [...new Set(resourcesData.map(resource => resource.category))];
+const tileColors = ['#f8637b', '#4c8dff', '#44c392', '#f8b84c', '#9372ff', '#2cc0f4'];
 
-// 资源卡片组件
-function ResourceCard({ resource }) {
-  return (
-    <div className={styles.resourceCard}>
-      <div className={styles.cardHeader}>
-        {resource.image && (
-          <img 
-            src={resource.image} 
-            alt={resource.title}
-            className={styles.cardImage}
-            onError={(e) => {
-              e.target.style.display = 'none';
-            }}
-          />
-        )}
-        <div className={styles.cardTitle}>
-          <h3>
-            <Link href={resource.url} target="_blank" rel="noopener noreferrer">
-              {resource.title}
-            </Link>
-          </h3>
-        </div>
-      </div>
-      <p className={styles.cardDescription}>{resource.description}</p>
-      <div className={styles.cardTags}>
-        {resource.tags.map((tag, index) => (
-          <span key={index} className={styles.tag}>
-            {tag}
-          </span>
-        ))}
-      </div>
-      <div className={styles.cardFooter}>
-        <Link 
-          href={resource.url} 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className={styles.visitButton}
-        >
-          访问资源 →
-        </Link>
-      </div>
-    </div>
-  );
-}
+const truncateText = (text, maxLength = 42) => (text.length > maxLength ? `${text.slice(0, maxLength - 1)}…` : text);
 
-// 搜索框组件
-function SearchBox({ searchTerm, onSearchChange }) {
-  return (
-    <div className={styles.searchBox}>
-      <input
-        type="text"
-        placeholder="搜索资源..."
-        value={searchTerm}
-        onChange={(e) => onSearchChange(e.target.value)}
-        className={styles.searchInput}
-      />
-    </div>
-  );
-}
-
-// 分类筛选组件
-function CategoryFilter({ categories, selectedCategory, onCategoryChange }) {
-  return (
-    <div className={styles.categoryFilter}>
-      <button
-        className={`${styles.categoryButton} ${selectedCategory === 'all' ? styles.active : ''}`}
-        onClick={() => onCategoryChange('all')}
-      >
-        全部
-      </button>
-      {categories.map(category => (
-        <button
-          key={category}
-          className={`${styles.categoryButton} ${selectedCategory === category ? styles.active : ''}`}
-          onClick={() => onCategoryChange(category)}
-        >
-          {category}
-        </button>
-      ))}
-    </div>
-  );
-}
-
-// 主组件
+// Dashboard-style landing page inspired by Sun-Panel
 export default function ResourceNavigation() {
-  const { siteConfig } = useDocusaurusContext();
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const {siteConfig} = useDocusaurusContext();
+  const [now, setNow] = useState(() => new Date());
 
-  // 筛选资源
-  const filteredResources = useMemo(() => {
-    return resourcesData.filter(resource => {
-      const matchesSearch = resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           resource.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
-      
-      const matchesCategory = selectedCategory === 'all' || resource.category === selectedCategory;
-      
-      return matchesSearch && matchesCategory;
+  useEffect(() => {
+    const timer = setInterval(() => setNow(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const categoriesWithResources = useMemo(() => {
+    const grouped = new Map();
+    resourcesData.forEach((resource) => {
+      if (!grouped.has(resource.category)) {
+        grouped.set(resource.category, []);
+      }
+      grouped.get(resource.category).push(resource);
     });
-  }, [searchTerm, selectedCategory]);
+    return Array.from(grouped.entries());
+  }, []);
+
+  const formattedTime = now.toLocaleTimeString('zh-CN', {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  });
+
+  const formattedDate = now.toLocaleDateString('zh-CN', {
+    month: '2-digit',
+    day: '2-digit',
+    weekday: 'long',
+  });
 
   return (
-    <Layout
-      title="资源导航"
-      description="精选的开发资源和工具导航页面"
-    >
-      <div className={styles.container}>
-        <header className={styles.header}>
-          <h1>常用网址收藏</h1>
-          <p>精选的开发工具、学习资源和技术文档，助力你的开发之路</p>
-        </header>
-
-        {/* 搜索和筛选区域 */}
-        <section className={styles.filterSection}>
-          <SearchBox 
-            searchTerm={searchTerm} 
-            onSearchChange={setSearchTerm}
-          />
-          <CategoryFilter
-            categories={categories}
-            selectedCategory={selectedCategory}
-            onCategoryChange={setSelectedCategory}
-          />
-        </section>
-
-        {/* 资源列表区域 */}
-        <section className={styles.resourcesSection}>
-          <div className={styles.resultsInfo}>
-            <span>找到 {filteredResources.length} 个资源</span>
-          </div>
-          
-          {filteredResources.length > 0 ? (
-            <div className={styles.resourceGrid}>
-              {filteredResources.map(resource => (
-                <ResourceCard key={resource.id} resource={resource} />
-              ))}
+    <Layout title="资源导航" description="精选的开发资源和工具导航页面">
+      <div className={styles.dashboard}>
+        <div className={styles.gradientBackground} />
+        <div className={styles.dashboardContent}>
+          <header className={styles.heroArea}>
+            <div className={styles.branding}>{siteConfig.title ?? 'sonews'}</div>
+            <div className={styles.clockBox}>
+              <span className={styles.time}>{formattedTime}</span>
+              <span className={styles.date}>{formattedDate}</span>
             </div>
-          ) : (
-            <div className={styles.noResults}>
-              <p>没有找到匹配的资源，试试其他关键词吧！</p>
-            </div>
-          )}
-        </section>
+          </header>
+
+          <main className={styles.tilesArea}>
+            {categoriesWithResources.map(([category, items], categoryIndex) => (
+              <section key={category} className={styles.tilesRow}>
+                <div className={styles.rowHeader}>
+                  <h2 className={styles.rowTitle}>{category}</h2>
+                  <span className={styles.rowCount}>{items.length} 个资源</span>
+                </div>
+                <div className={styles.tilesRowList}>
+                  {items.map((resource, tileIndex) => {
+                    const color = tileColors[(categoryIndex * tileColors.length + tileIndex) % tileColors.length];
+                    return (
+                      <Link
+                        key={resource.id}
+                        href={resource.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.tile}
+                        style={{'--tile-color': color}}
+                      >
+                        <div className={styles.tileInner}>
+                          {resource.image && (
+                            <img
+                              src={resource.image}
+                              alt={resource.title}
+                              className={styles.tileIcon}
+                              onError={(e) => {
+                                e.currentTarget.style.display = 'none';
+                              }}
+                            />
+                          )}
+                          <span className={styles.tileName}>{resource.title}</span>
+                        </div>
+                        <span className={styles.tileSubtitle}>{truncateText(resource.description)}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </section>
+            ))}
+          </main>
+        </div>
       </div>
     </Layout>
   );
