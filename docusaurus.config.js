@@ -101,6 +101,11 @@ const config = {
               },
               {
                 type: 'docSidebar',
+                sidebarId: 'linuxdevopsSidebar',
+                label: ' devops专栏',
+              },
+              {
+                type: 'docSidebar',
                 sidebarId: 'linuxdatabaseSidebar',
                 label: ' 数据库管理',
               },
