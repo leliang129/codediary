@@ -122,3 +122,7 @@ sudo gitlab-ctl hup nginx
 - **反向代理阻断验证**：确保 ACME 验证请求（`/.well-known/acme-challenge/`）能够透传到 GitLab。
 - **证书路径权限不足**：自定义证书目录时需保证 `gitlab-www` 用户可读；使用内置方案时 GitLab 会自动处理权限。
 - **签发失败或未生效**：确认执行 `gitlab-ctl reconfigure`，必要时查看 `gitlab-ctl tail nginx` 与 `gitlab-ctl tail letsencrypt` 日志进行排查。
+
+## 相关阅读
+
+- [Git 使用指南](./git-guide.md)：汇总 Git 常用命令、冲突处理与推送失败排查方法。
