@@ -1,6 +1,7 @@
 ---
 title: Shell脚本高级技巧
 slug: /scripting-languages/shell/advanced
+sidebar_position: 1
 ---
 
 # Shell脚本高级技巧
