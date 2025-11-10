@@ -1,6 +1,7 @@
 ---
 title: Bash脚本编程指南
-slug: /scripting-languages/bash
+slug: /scripting-languages/shell/bash
+sidebar_position: 1
 ---
 
 # Bash脚本编程指南

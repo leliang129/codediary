@@ -45,7 +45,7 @@ if __name__ == "__main__":
     工程名                     分支名                 项目ID
     example                    main                  216
     """
-    gitlab_url = "https://gitlab.1cobot.com"
+    gitlab_url = "https://gitlab.examples.com"
     access_token = "xxxxxxxxxxxxx"
     project = "216"
     branch = "main"

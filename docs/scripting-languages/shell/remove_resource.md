@@ -1,6 +1,6 @@
 ---
 title: kubectl命令移除资源限制配置
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 在批量迁移或调试 Kubernetes 工作负载时，常常需要临时去掉 Deployment 中的 `requests`/`limits` 配置，避免资源配额带来的调度失败。下面的脚本演示了如何针对指定命名空间的所有 Deployment 删除容器级别的资源限制。

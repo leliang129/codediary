@@ -1,199 +1,94 @@
-.dashboard {
-  position: relative;
-  min-height: calc(100vh - var(--ifm-navbar-height, 0px));
+.layout {
+  padding: 2rem 0 2.5rem;
+}
+
+.layoutInner {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 1.5rem 4rem;
-  overflow: hidden;
+  gap: 2rem;
 }
 
-.gradientBackground {
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(135deg, rgba(12, 19, 70, 0.35), rgba(58, 34, 119, 0.25)),
-    url('/img/navimg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 0;
-}
-
-.dashboardContent {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 1200px;
-  color: #ffffff;
-}
-
-.heroArea {
+.content {
+  flex: 1;
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 1.5rem;
-  margin-bottom: 2.5rem;
 }
 
-.branding {
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.categorySection {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  scroll-margin-top: calc(var(--ifm-navbar-height, 60px) + 32px);
 }
 
-.clockBox {
-  text-align: right;
+.categorySection:last-of-type {
+  border-bottom: none;
+  padding-bottom: 2rem;
+}
+
+.sectionHeader {
+  margin-bottom: 0.9rem;
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.time {
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
-  font-weight: 700;
-}
-
-.date {
-  font-size: 1rem;
-  opacity: 0.8;
-}
-
-.tilesArea {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-
-.tilesRow {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.rowHeader {
-  display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  flex-wrap: wrap;
 }
 
-.rowTitle {
+.sectionHeader h2 {
   margin: 0;
-  font-size: 1.05rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.78);
 }
 
-.rowCount {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
-  margin-left: auto;
+.sectionCount {
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
 }
 
-.tilesRowList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 1.5rem;
-  align-items: stretch;
-  justify-content: flex-start;
+.resourceList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.35rem;
 }
 
-.tile {
-  --tile-color: #4c8dff;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-  flex: 0 0 260px;
-  width: 260px;
-  max-width: 260px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
-  border-radius: 20px;
-  padding: 1.1rem 1.6rem 1.1rem 1.9rem;
-  text-decoration: none !important;
-  color: #ffffff !important;
-  box-shadow: inset 6px 0 0 0 var(--tile-color), 0 22px 40px rgba(12, 10, 36, 0.35);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-  min-height: 92px;
-  height: 118px;
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  overflow: hidden;
+.resourceList li {
+  margin: 0;
 }
 
-.tile:hover {
-  transform: translateY(-4px);
-  box-shadow: inset 6px 0 0 0 var(--tile-color), 0 28px 48px rgba(12, 10, 36, 0.45);
-}
-
-.tileInner {
+.resourceItem {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 0.5rem;
+  background: #fff;
+  padding: 0.45rem 0.55rem;
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  justify-content: flex-start;
+  min-height: 52px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.tileIcon {
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.22);
-  padding: 6px;
-  object-fit: contain;
-  backdrop-filter: blur(4px);
-  position: relative;
-  z-index: 1;
+.resourceItem:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
 }
 
-.tileName {
-  font-size: 1.1rem;
+
+.resourceTitle {
+  font-size: 0.86rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
-  position: relative;
-  z-index: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  text-align: left;
   width: 100%;
+  line-height: 1.25;
 }
 
-.tileSubtitle {
-  font-size: 0.85rem;
-  opacity: 0.78;
-  line-height: 1.3;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  position: relative;
-  z-index: 1;
-}
-
-@media (max-width: 768px) {
-  .dashboard {
-    padding: 2.5rem 1.25rem;
+@media screen and (max-width: 600px) {
+  .layoutInner {
+    flex-direction: column;
   }
 
-  .clockBox {
-    text-align: left;
-  }
-
-  .tile {
-    flex: 1 1 100%;
-    width: 100%;
-    max-width: none;
-    height: auto;
-    min-height: 92px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .tile,
-  .tile:hover {
-    transform: none;
-    transition: none;
+  .resourceList {
+    grid-template-columns: 1fr;
   }
 }

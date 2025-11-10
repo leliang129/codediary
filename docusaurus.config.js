@@ -10,20 +10,20 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'sonews',
-  tagline: 'Linux • 云原生 • 脚本编程',
+  title: 'Is Liang的烂笔头',
+  tagline: 'Linux • 云原生 • 脚本编程导航',
   favicon: 'img/favicon.svg',
 
   // Set the production url of your site here
-  url: 'https://codediary.dev',
+  url: 'https://hickercity.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'leliang129', // Usually your GitHub org/user name.
-  projectName: 'codediary', // Usually your repo name.
+  // organizationName: 'leliang129', // Usually your GitHub org/user name.
+  // projectName: 'codediary', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -72,7 +72,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'sonews',
+        title: 'Is Liang的烂笔头',
         logo: {
           alt: 'My Site Logo',
           src: 'img/favicon.svg',

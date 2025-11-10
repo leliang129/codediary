@@ -5,7 +5,7 @@ title: Python-删除gitlab所有标签
 import gitlab
 
 # 配置 GitLab 服务器 URL 和私人访问令牌
-GITLAB_URL = 'https://gitlab.1cobot.com'
+GITLAB_URL = 'https://gitlab.examples.com'
 PRIVATE_TOKEN = '---'
 PROJECT_ID = '216'
 
