@@ -191,70 +191,70 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: '文档',
-            items: [
-              {
-                label: 'Linux基础',
-                to: '/docs/linux-basics/intro',
-              },
-              {
-                label: '云原生',
-                to: '/docs/cloud-native/intro',
-              },
-              {
-                label: '脚本语言',
-                to: '/docs/scripting-languages/intro',
-              },
-            ],
-          },
-          {
-            title: '社区',
-            items: [
-              {
-                label: 'GitHub',
-                to: 'https://github.com/',
-              },
-              {
-                label: 'Docker',
-                to: 'https://docs.docker.com/',
-              },
-              {
-                label: 'GitLab',
-                to: 'https://gitlab.com/',
-              },
+        // links: [
+        //   {
+        //     title: '文档',
+        //     items: [
+        //       {
+        //         label: 'Linux基础',
+        //         to: '/docs/linux-basics/intro',
+        //       },
+        //       {
+        //         label: '云原生',
+        //         to: '/docs/cloud-native/intro',
+        //       },
+        //       {
+        //         label: '脚本语言',
+        //         to: '/docs/scripting-languages/intro',
+        //       },
+        //     ],
+        //   },
+        //   {
+        //     title: '社区',
+        //     items: [
+        //       {
+        //         label: 'GitHub',
+        //         to: 'https://github.com/',
+        //       },
+        //       {
+        //         label: 'Docker',
+        //         to: 'https://docs.docker.com/',
+        //       },
+        //       {
+        //         label: 'GitLab',
+        //         to: 'https://gitlab.com/',
+        //       },
 
               
-            ],
-          },
-          {
-            title: '云原生指南',
-            items: [
-              {
-                label: 'Kubernetes',
-                to: 'https://kubernetes.io/',
-              },
-              {
-                label: 'Prometheus',
-                to: 'https://prometheus.io/',
-              },
-              {
-                label: 'ArgoCD',
-                to: 'https://argoproj.github.io/',
-              },
-            ],
-          },
-          {
-            title: '更多',
-            items: [
-              {
-                label: '博客',
-                to: '/blog',
-              },
-            ],
-          },
-        ],
+        //     ],
+        //   },
+        //   {
+        //     title: '云原生指南',
+        //     items: [
+        //       {
+        //         label: 'Kubernetes',
+        //         to: 'https://kubernetes.io/',
+        //       },
+        //       {
+        //         label: 'Prometheus',
+        //         to: 'https://prometheus.io/',
+        //       },
+        //       {
+        //         label: 'ArgoCD',
+        //         to: 'https://argoproj.github.io/',
+        //       },
+        //     ],
+        //   },
+        //   {
+        //     title: '更多',
+        //     items: [
+        //       {
+        //         label: '博客',
+        //         to: '/blog',
+        //       },
+        //     ],
+        //   },
+        // ],
         copyright: `Copyright © ${new Date().getFullYear()} 技术笔记. 基于 Docusaurus 构建.`,
       },
       prism: {
