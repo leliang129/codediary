@@ -247,12 +247,67 @@ const resourcesData = [
     featured: false,
     image: '/img/docker-logo.png'
   },
+  {
+    id: 28,
+    title: 'LOVART设计',
+    url: 'https://www.lovart.ai/',
+    category: 'AI工具',
+    tags: ['AI', '工具', '合集'],
+    featured: false,
+    image: '/img/docker-logo.png'
+  },
+  {
+    id: 29,
+    title: 'FastGPT',
+    url: 'https://fastgpt.io/zh',
+    category: 'AI工具',
+    tags: ['AI', '工具', '合集'],
+    featured: false,
+    image: '/img/docker-logo.png'
+  },
+  {
+    id: 30,
+    title: 'n8n',
+    url: 'https://github.com/n8n-io/n8n',
+    category: 'AI工具',
+    tags: ['AI', '工具', '合集'],
+    featured: false,
+    image: '/img/docker-logo.png'
+  },
+  {
+    id: 31,
+    title: 'Dify',
+    url: 'https://docs.dify.ai/zh-hans/introduction',
+    category: 'AI工具',
+    tags: ['AI', '工具', '合集'],
+    featured: false,
+    image: '/img/docker-logo.png'
+  },
+  {
+    id: 32,
+    title: 'ChatGPT',
+    url: 'https://chatgpt.com/',
+    category: 'AI工具',
+    tags: ['AI', '工具', '合集'],
+    featured: false,
+    image: '/img/docker-logo.png'
+  },
+  {
+    id: 33,
+    title: 'Google Gemini',
+    url: 'https://gemini.google.com/',
+    category: 'AI工具',
+    tags: ['AI', '工具', '合集'],
+    featured: false,
+    image: '/img/docker-logo.png'
+  }
 ];
 
 const categoryDescriptions = {
   软件源: '',
   容器类: '',
   工具类: '',
+  AI工具: '',
 };
 
 const categoryOrder = ['软件源', '容器类', '工具类'];

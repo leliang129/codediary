@@ -35,9 +35,9 @@ const docSections = [
         href: '/docs/cloud-native/kubernetes/intro',
       },
       {
-        title: 'Harbor 镜像仓库',
+        title: 'Docker 教程',
         description: '企业级镜像管理与安全加固实践。',
-        href: '/docs/cloud-native/kubernetes/harbor',
+        href: '/docs/cloud-native/docker/intro',
       },
       {
         title: 'Prometheus 观测',

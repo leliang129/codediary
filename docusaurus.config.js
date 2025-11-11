@@ -128,6 +128,11 @@ const config = {
               // },
               {
                 type: 'docSidebar',
+                sidebarId: 'dockerSidebar',
+                label: 'Docker',
+              },
+              {
+                type: 'docSidebar',
                 sidebarId: 'kubernetesSidebar',
                 label: 'Kubernetes',
               },
