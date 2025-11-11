@@ -63,7 +63,7 @@ const docSections = [
       {
         title: 'Shell 实战',
         description: '编写高效脚本处理日常排障与资源管理。',
-        href: '/docs/scripting-languages/shell/intro',
+        href: '/docs/scripting-languages/shell/commonly_used',
       },
     ],
   },
