@@ -188,7 +188,7 @@ const config = {
           //   position: 'right',
           // },
           {
-            to: '/resources',
+            to: 'https://home.hickercity.com',
             label: '资源导航',
             position: 'right',
           },
